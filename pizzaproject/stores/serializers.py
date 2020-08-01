@@ -20,15 +20,16 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
     def get_absolute_url(self, obj):
         return reverse('pizzeria_detail', args=(obj.pk,))
 
+class ImageSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        fields = ['image', 'image_title', 'uploded_at']
+        model = Image
+
 
 class PizzeriaDetailSerializer(serializers.ModelSerializer):
     update = serializers.SerializerMethodField()
     delete = serializers.SerializerMethodField()
-    pizzeria_images = serializers.HyperlinkedRelatedField(
-        many=True,
-        read_only=True,
-        view_name='pizzeria_detail'
-    )
+    pizzeria_images = ImageSerializer(many=True)
 
     class Meta:
         model = Pizzeria
