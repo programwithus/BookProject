@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Pizzeria
+from .models import Image
 from rest_framework.reverse import reverse
 
 
@@ -23,6 +24,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
 class PizzeriaDetailSerializer(serializers.ModelSerializer):
     update = serializers.SerializerMethodField()
     delete = serializers.SerializerMethodField()
+    pizzeriaImages = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Pizzeria
@@ -41,6 +43,7 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
             'active',
             'update',
             'delete',
+            'pizzeriaImages',
         ]
 
     def get_update(self, obj):
