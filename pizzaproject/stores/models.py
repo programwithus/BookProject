@@ -20,7 +20,7 @@ class Pizzeria(models.Model):
 
 class Image(models.Model):
 	pizzeria = models.ForeignKey(Pizzeria, on_delete=models.CASCADE, related_name='pizzeria_images')
-	image = models.ImageField(upload_to='pizzariaImages')
+	image = models.ImageField(upload_to='photos')
 	image_title = models.CharField(max_length=120, blank=True)
 	uploded_at = models.DateTimeField(auto_now_add=True)
 

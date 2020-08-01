@@ -3,7 +3,6 @@ from .models import Pizzeria
 from .models import Image
 from rest_framework.reverse import reverse
 
-
 class PizzeriaListSerializer(serializers.ModelSerializer):
     absolute_url = serializers.SerializerMethodField()
 
@@ -15,6 +14,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
             'city',
             'zip_code',
             'absolute_url',
+            'logo_image',
         ]
 
     def get_absolute_url(self, obj):
@@ -43,7 +43,6 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
             'website',
             'phone_number',
             'description',
-            'logo_image',
             'email',
             'active',
             'update',
