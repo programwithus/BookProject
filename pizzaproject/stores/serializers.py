@@ -27,7 +27,7 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
     pizzeria_images = serializers.HyperlinkedRelatedField(
         many=True,
         read_only=True,
-        view_name='image'
+        view_name='pizzeria_images'
     )
 
     class Meta:
