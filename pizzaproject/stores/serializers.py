@@ -24,7 +24,11 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
 class PizzeriaDetailSerializer(serializers.ModelSerializer):
     update = serializers.SerializerMethodField()
     delete = serializers.SerializerMethodField()
-    pizzeriaImages = serializers.StringRelatedField(many=True)
+    pizzeria_images = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='image'
+    )
 
     class Meta:
         model = Pizzeria
@@ -43,7 +47,7 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
             'active',
             'update',
             'delete',
-            'pizzeriaImages',
+            'pizzeria_images',
         ]
 
     def get_update(self, obj):
