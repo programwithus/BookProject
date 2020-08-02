@@ -22,7 +22,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
 
 class ImageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        fields = ['image', 'image_title', 'uploded_at']
+        fields = ['id','image', 'image_title', 'uploded_at']
         model = Image
 
 
