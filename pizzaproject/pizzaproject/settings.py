@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9#c*=$18d5wrq79+vc@m-i01954a_g$zw=t)9!eb_b*!*50b6b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -135,7 +135,8 @@ else:
     STATIC_URL = '/static/'         
     STATIC_ROOT = '/var/www/venv/BookProject/pizzaproject/static/'
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, '/var/www/venv/BookProject/pizzaproject/media/pizzariaImages/')
+    MEDIA_ROOT = os.path.join(BASE_DIR, '/var/www/venv/BookProject/pizzaproject/media/pizzariaImages/
+        ')
 
 
 
