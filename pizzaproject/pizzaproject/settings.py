@@ -134,8 +134,8 @@ if DEBUG is True:
 else:
     STATIC_URL = '/static/'         
     STATIC_ROOT = '/var/www/venv/BookProject/pizzaproject/static/'
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, '/var/www/venv/BookProject/pizzaproject/media/pizzariaImages/')
+    MEDIA_URL = '/var/www/venv/BookProject/pizzaproject/static/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, '/var/www/venv/BookProject/pizzaproject/media/')
 
 
 
