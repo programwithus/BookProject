@@ -21,7 +21,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
             'zip_code',
             'absolute_url',
             'logo_image',
-            'get_image_url',
+            'image_url',
         ]
 
     def get_absolute_url(self, obj):
@@ -35,7 +35,7 @@ class ImageSerializer(serializers.HyperlinkedModelSerializer):
     image_url = serializers.SerializerMethodField('get_image_url')
 
     class Meta:
-        fields = ['id','image', 'image_title', 'uploded_at', 'get_image_url']
+        fields = ['id','image', 'image_title', 'uploded_at', 'image_url']
         model = Image
 
     def get_image_url(self, obj):
@@ -67,7 +67,7 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
             'update',
             'delete',
             'pizzeria_images',
-            'get_image_url',
+            'image_url',
         ]
 
     def get_update(self, obj):
