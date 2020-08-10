@@ -35,7 +35,7 @@ class ImageSerializer(serializers.HyperlinkedModelSerializer):
     image_url = serializers.SerializerMethodField('get_image_url')
 
     class Meta:
-        fields = ['id','image', 'image_title', 'uploded_at']
+        fields = ['id','image', 'image_title', 'uploded_at', 'get_image_url']
         model = Image
 
     def get_image_url(self, obj):
