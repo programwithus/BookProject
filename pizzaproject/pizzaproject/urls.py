@@ -28,3 +28,4 @@ urlpatterns = [
     path('register/', UserCreateView.as_view(), name='create_user'),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# jhgjhgmj
