@@ -29,7 +29,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
 
     def get_image_url(self, obj):
         request = self.context.get("request")
-        return request.build_absolute_uri(obj.image.url)
+        return request.build_absolute_uri(obj.logo_image.url)
 
 class ImageSerializer(serializers.HyperlinkedModelSerializer):
     image_url = serializers.SerializerMethodField('get_image_url')
@@ -78,7 +78,7 @@ class PizzeriaDetailSerializer(serializers.ModelSerializer):
 
     def get_image_url(self, obj):
         request = self.context.get("request")
-        return request.build_absolute_uri(obj.image.url)
+        return request.build_absolute_uri(obj.logo_image.url)
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
