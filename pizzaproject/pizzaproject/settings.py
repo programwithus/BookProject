@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'stores',
 ]
 
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -134,7 +136,7 @@ if DEBUG is True:
 else:
     STATIC_URL = '/static/'         
     STATIC_ROOT = '/var/www/venv/BookProject/pizzaproject/static/'
-    MEDIA_URL = '/var/www/venv/BookProject/pizzaproject/static/'
+    MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, '/var/www/venv/BookProject/pizzaproject/media/')
 
 
