@@ -20,7 +20,6 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
             'zip_code',
             'absolute_url',
             'logo_image',
-            'image_url',
         ]
 
     def get_absolute_url(self, obj):
